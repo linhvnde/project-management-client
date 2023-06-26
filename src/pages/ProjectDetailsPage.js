@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
+import AddProject from '../components/AddProject';
+import AddTask from '../components/AddTask';
 
 const API_URL = 'http://localhost:5005';
 
@@ -22,6 +24,8 @@ function ProjectDetailsPage(props) {
 
   return (
     <div className="ProjectDetails">
+      <AddTask callbackToUpdateProject={getProject} id={id} />
+
       {project && (
         <>
           <h1>{project.title}</h1>
