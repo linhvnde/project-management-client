@@ -3,6 +3,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ProjectListPage from './pages/ProjectListPage';
+import ProjectDetailsPage from './pages/ProjectDetailsPage';
+import EditProjectPage from './pages/EditProjectPage';
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/projects" element={<ProjectListPage/>} />
+        <Route path="/projects" element={<ProjectListPage />} />
+        <Route path="/projects/:id" element={<ProjectDetailsPage />} />
+        <Route path="/projects/edit/:id" element={<EditProjectPage />} />
       </Routes>
     </div>
   );
